@@ -34,10 +34,14 @@ class App extends Component {
           <h2>React-Chan</h2>
           <h3>Boards</h3>
         </div>
-        <Grid>
+        <Grid fluid={true}>
             <Row>
                 {numbers.map((number, index) =>
-                    <Board key={index} title={this.state.boards[number].title} />
+                    <Col key={index} md={3}>
+                        <Board key={index}
+                            title={this.state.boards[number].title}
+                            description={this.state.boards[number].meta_description} />
+                    </Col>
                 )}
             </Row>
         </Grid>
