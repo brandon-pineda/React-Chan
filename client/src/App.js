@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Col, Grid, Row} from 'react-bootstrap';
 import Actions from './Actions';
-import Board from './Board';
+import Board from './components/Board';
+import Dropdown from './components/Dropdown';
 //styles
 import styles from './Modules.css';
 
@@ -35,6 +36,7 @@ class App extends Component {
           <h3>Boards</h3>
         </div>
         <Grid fluid={true}>
+            <Row> <Dropdown /> </Row>
             <Row>
                 {numbers.map((number, index) =>
                     <Col key={index} md={3}>
