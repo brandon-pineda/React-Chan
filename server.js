@@ -12,18 +12,26 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-app.get('/boards', function(req, res){
-
+app.get('/api/boards', function(req, res){
     fetch('https://a.4cdn.org/boards.json')
         .then( (res) => {
             return res.json()
         }).then( (json) => {
             res.send(json)
         })
-
-    // Send the response as a JSON array
-    // res.send(boards)
 })
+
+app.get('/board/api', (req, res) => {
+    const param = req.query.q
+
+    fetch(`https://a.4cdn.org/${param}/1.json`)
+        .then( (res) => {
+            return res.json()
+        }).then( (json) => {
+            res.send(json)
+        })
+})
+
 
 
 app.listen(app.get('port'), () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import {DropdownButton, MenuItem} from 'react-bootstrap';
 
 const Dropdown = () => (
-    <DropdownButton title='categories'>
+    <DropdownButton title='categories' id='board-category-dropdown'>
         <MenuItem eventKey="1">Adult (NSFW)</MenuItem>
         <MenuItem eventKey="2">Creative</MenuItem>
         <MenuItem eventKey="3">Interests</MenuItem>

@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import {Link, Match} from 'react-router';
-import BoardsContainer from './pages/BoardsContainer';
+import {Match} from 'react-router';
+import BoardsPage from './pages/BoardsPage';
+import ThreadsPage from './pages/ThreadsPage'
 
 class App extends Component {
   render() {
     return (
       <div>
-          <Match exactly pattern="/" component={BoardsContainer} />
+          <Match exactly pattern="/" component={BoardsPage} />
+          <Match pattern="/board/:id" component={ThreadsPage} />
       </div>
     )
   }

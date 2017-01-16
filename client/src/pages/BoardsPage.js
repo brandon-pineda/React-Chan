@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Col, Grid, Row} from 'react-bootstrap';
-import Actions from '../actions/Actions';
+import {getBoards} from '../actions/Actions';
 import Board from '../components/Board';
 import Dropdown from '../components/Dropdown';
 //styles
 import styles from '../Modules.css';
 
-class BoardsContainer extends Component {
+class BoardsPage extends Component {
 
     constructor(){
     	super()
@@ -22,7 +22,7 @@ class BoardsContainer extends Component {
     }
 
     componentWillMount() {
-        Actions.getBoards((boards) => {
+        getBoards((boards) => {
             this.setState({boards: boards.boards})
         })
     }
@@ -36,11 +36,12 @@ class BoardsContainer extends Component {
           <h3>Boards</h3>
         </div>
         <Grid fluid={true}>
-            <Row> <Dropdown /> </Row>
+            <Row> <Dropdown/> </Row>
             <Row>
                 {numbers.map((number, index) =>
                     <Col key={index} md={3}>
                         <Board key={index}
+                            boardName={this.state.boards[number].board}
                             title={this.state.boards[number].title}
                             description={this.state.boards[number].meta_description} />
                     </Col>
@@ -52,4 +53,4 @@ class BoardsContainer extends Component {
   }
 }
 
-export default BoardsContainer;
+export default BoardsPage;

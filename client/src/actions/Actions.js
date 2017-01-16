@@ -1,10 +1,18 @@
 /* eslint-disable no-undef */
-function getBoards(cb) {
-  return fetch(`boards`, {
+export function getBoards(cb) {
+  return fetch(`api/boards`, {
     accept: 'application/json',
   }).then(checkStatus)
     .then(parseJSON)
     .then(cb)
+}
+
+export function getThreads(query, cb) {
+  return fetch(`api?q=${query}`, {
+    accept: 'application/json',
+  }).then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
 }
 
 function checkStatus(response) {
@@ -22,6 +30,3 @@ function checkStatus(response) {
 function parseJSON(response) {
   return response.json()
 }
-
-const Actions = { getBoards }
-export default Actions
