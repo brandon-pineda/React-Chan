@@ -2,6 +2,7 @@
   "name": "React-Chan",
   "version": "1.0.0",
   "main": "server.js",
+  "postinstall" : "npm run build",
   "babel": {
     "presets": [
       "es2015",
