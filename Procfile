@@ -1,1 +1,1 @@
-web: node static.js
+web: npm run server
