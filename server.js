@@ -23,7 +23,6 @@ app.get('/api/boards', function(req, res){
 
 app.get('/board/api', (req, res) => {
     const param = req.query.q
-
     fetch(`https://a.4cdn.org/${param}/1.json`)
         .then( (res) => {
             return res.json()
