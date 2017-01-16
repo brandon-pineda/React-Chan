@@ -6,7 +6,7 @@ const Board = (props) => (
         <Link to={`/board/${props.boardName}`}>
             <h1>{`${(props.title)}`}</h1>
         </Link>
-        <p>{`${props.description}`}</p>
+        <div dangerouslySetInnerHTML={{__html: `${props.description}`}}/>
     </div>
 )
 
