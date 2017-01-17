@@ -22,7 +22,7 @@
   "scripts": {
    "start": "nf start -p $PORT",
    "dev": "nf start -p 3000 --procfile Procfile.dev",
-   "server": "node ./dist/server.js",
+   "server": "node server.js",
    "build": "babel lib -d dist --presets es2015,stage-0"
  },
   "eslintConfig": {
