@@ -3,7 +3,7 @@ import React from 'react';
 let getTitle = (title) => {
     if(title) {
         return (
-            <h2>`${title}`</h2>
+            <h2>{title}</h2>
         )
     }
 }
