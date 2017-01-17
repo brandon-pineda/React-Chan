@@ -25,6 +25,9 @@
    "server": "node server.js",
    "build": "babel lib -d dist --presets es2015,stage-0"
  },
+ "engines": {
+  "node": "6.9.4"
+},
   "eslintConfig": {
       "extends": "react-app"
   },
